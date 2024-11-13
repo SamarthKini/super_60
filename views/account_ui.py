@@ -33,13 +33,13 @@ Select an option
                 case _:
                     print('Invalid choice, Please Try Again!')
     def open_account(self):
-        account_type = input('Enter the account type (saving/current): ').strip().lower()
+        account_type = input('Enter the account type (savings/current): ').strip().lower()
         name = input("Enter your name: ")
         amount = float(input("Enter initial deposit amount: "))
         pin_number = int(input("Enter your pin number: "))
-        privilege = input("Enter the account privilege (PREMIUM/GOLD/SILVER): ").strip().lower()
+        privilege = input("Enter the account privilege (PREMIUM/GOLD/SILVER): ").strip().upper()
         
-        if account_type == 'saving':
+        if account_type == 'savings':
             date_of_birth = input('Enter your date of birth (YYYY-MM-DD): ')
             gender = input('Enter your gender (M/F): ')
             account  = AccountManager().open_account(account_type, name=name, balance=amount,date_of_birth = date_of_birth, pin_number=pin_number, privilege=privilege, gender = gender)

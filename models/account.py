@@ -7,6 +7,6 @@ class Account:
         self.name = name
         self.pin_number = pin_number
         self.balance = balance
-        self.privilege = privilege.capitalize()
+        self.privilege = privilege
         self.is_active = True
         self.close_date = None

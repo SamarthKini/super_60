@@ -10,7 +10,7 @@ from services.account_privileges_manager import AccountPriviligesManager
 
 class AccountManager:
     def open_account(self,account_type,**kwargs):
-        if account_type == 'saving':
+        if account_type == 'savings':
             new_account = Savings(**kwargs)
         elif account_type == 'current':
             new_account = Current(**kwargs)
@@ -51,6 +51,7 @@ class AccountManager:
         if from_account.balance < amount:
             raise InsufficientFundsExceptions('Insufficient Funds')
         
+        print(from_account.privilege)
         limit = AccountPriviligesManager.get_transfer_limit(from_account.privilege)
         if amount > limit:
             raise TransferLimitExceedException("Transfer limit exceeded")
